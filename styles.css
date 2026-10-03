@@ -7,10 +7,11 @@
 
 body {
   font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
-  background-color: #f5f6f8;
-  color: #1f2329;
+  background-color: #f6f7f9;
+  color: #111827;
   line-height: 1.6;
   padding: 40px 20px;
+  -webkit-font-smoothing: antialiased; /* 文字边缘更细腻，屏幕上看着更"现代" */
 }
 
 /* ---------- 布局：把内容限制宽度并水平居中 ---------- */
@@ -20,26 +21,30 @@ body {
 }
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  color: #6b7280;
+  color: #667085;
   margin-bottom: 24px;
 }
 
 /* ---------- 卡片 ---------- */
 .card {
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  border: 1px solid #eef0f4;
+  border-radius: 14px;
   padding: 20px 24px;
+  margin-bottom: 16px; /* 补上的：之前两张卡片是贴在一起的 */
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
 }
 
 .card h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 
 .card p {
@@ -48,7 +53,8 @@ h1 {
 
 #count {
   font-size: 24px;
-  color: #2563eb;
+  font-weight: 600;
+  color: #111827;
 }
 
 /* ---------- 按钮 ---------- */
@@ -58,13 +64,15 @@ h1 {
 }
 
 button {
-  padding: 8px 16px;
+  padding: 9px 16px;
   font-size: 14px;
+  font-weight: 500;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #2563eb;
   color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.15s ease; /* hover 变色变成渐变，而不是瞬间跳变 */
 }
 
 /* 鼠标悬停时变深一点点，给用户"可以点"的反馈 */
@@ -73,12 +81,12 @@ button:hover {
 }
 
 button.secondary {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: #f2f4f7;
+  color: #344054;
 }
 
 button.secondary:hover {
-  background-color: #d1d5db;
+  background-color: #e4e7ec;
 }
 
 /* ==========================================================
@@ -103,39 +111,42 @@ button.secondary:hover {
   margin-bottom: 0;
 }
 
-/* ---------- 三张统计卡片：用 Grid 分三列 ---------- */
-/* repeat(3, 1fr) = "重复 3 次，每列占 1 份剩余空间"，也就是三等分 */
+/* ---------- 四张统计卡片：用 Grid 分四列 ---------- */
+/* repeat(4, 1fr) = "重复 4 次，每列占 1 份剩余空间"，也就是四等分 */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 24px;
 }
 
 .stat-card {
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 16px 20px;
+  border: 1px solid #eef0f4;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
 }
 
 .stat-card-finish {
-  background-color: #15db896c;
-  border: 1px solid #e6e5eb98;
-  border-radius: 10px;
-  padding: 16px 20px;
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
 }
 .stat-label {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 4px;
+  font-size: 13px;
+  color: #667085;
+  margin-bottom: 6px;
 }
 
 
 .stat-number {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
-  color: #2563eb;
+  line-height: 1.2;
+  color: #111827;
 }
 
 /* ---------- 今日任务列表 ---------- */
@@ -148,28 +159,35 @@ button.secondary:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #f0f1f4;
+  border-radius: 10px;
   margin-bottom: 8px;
+  transition: background-color 0.15s ease;
+}
+
+/* 鼠标移到某一行时整行微微变灰，暗示"这是一整块" */
+.task-item:hover {
+  background-color: #f9fafb;
 }
 
 /* 左边那个小方框，单纯用一个空 span 画出来的 */
 .task-check {
   width: 18px;
   height: 18px;
-  border: 2px solid #cbd5e1;
-  border-radius: 4px;
+  border: 2px solid #d0d5dd;
+  border-radius: 6px;
   flex-shrink: 0; /* 不许被压缩，始终保持正方形 */
 }
 
 .task-check.done {
-  background-color: #16a34a;
-  border-color: #16a34a;
+  background-color: #12b76a;
+  border-color: #12b76a;
 }
 .task-check.processing {
-  background-color: #fef3c7;
-  border-color: #fef3c7;
+  background-color: #fef0c7;
+  border-color: #fdb022;
 }
 
 /* flex: 1 = "把中间剩下的宽度都吃掉"，
@@ -180,27 +198,28 @@ button.secondary:hover {
 }
 
 .task-title.done {
-  color: #9ca3af;
+  color: #98a2b3;
   text-decoration: line-through;
 }
 
 /* ---------- 状态标签（小药丸） ---------- */
 .tag {
   font-size: 12px;
-  padding: 2px 10px;
+  font-weight: 500;
+  padding: 3px 10px;
   border-radius: 999px; /* 给个超大值，两端就变成半圆了 */
 }
 
 .tag-pending {
-  background-color: #fec7c7a4;
-  color: #cf0707;
+  background-color: #fef3f2;
+  color: #b42318;
 }
 
 .tag-done {
-  background-color: #dcfce7;
-  color: #166534;
+  background-color: #ecfdf5;
+  color: #067647;
 }
 .tag-processing {
-  background-color: #fef3c7;
-  color: #92400e;
+  background-color: #fffaeb;
+  color: #b54708;
 }
