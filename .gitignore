@@ -1,0 +1,10 @@
+# 编辑器 / 系统文件
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 依赖目录（以后用 npm 装包时会有）
+node_modules/
+
+# 日志
+*.log

@@ -1,0 +1,82 @@
+/* ---------- 全局重置：让不同浏览器的默认间距保持一致 ---------- */
+* {
+  box-sizing: border-box; /* 宽高包含 padding 和 border，算尺寸时更直观 */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+  background-color: #f5f6f8;
+  color: #1f2329;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* ---------- 布局：把内容限制宽度并水平居中 ---------- */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin-bottom: 16px;
+}
+
+#count {
+  font-size: 24px;
+  color: #2563eb;
+}
+
+/* ---------- 按钮 ---------- */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 鼠标悬停时变深一点点，给用户"可以点"的反馈 */
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button.secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+button.secondary:hover {
+  background-color: #d1d5db;
+}

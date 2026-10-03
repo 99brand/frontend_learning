@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端学习</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Hello，前端世界</h1>
+      <p class="subtitle">
+        这是仓库里的第一个页面。改一行代码，回到浏览器刷新，看看会发生什么。
+      </p>
+
+      <section class="card">
+        <h2>计数器</h2>
+        <p>当前计数：<strong id="count">0</strong></p>
+        <div class="actions">
+          <button id="add-btn" type="button">点我 +1</button>
+          <button id="reset-btn" type="button" class="secondary">重置</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- script 放在 body 最底部：浏览器已经把上面的标签解析完了，
+         所以 JS 里能直接查到这些元素 -->
+    <script src="main.js"></script>
+  </body>
+</html>
