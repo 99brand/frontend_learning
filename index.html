@@ -3,18 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>前端学习</title>
+    <title>TO-DO-LIST</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
-      <h1>Hello，前端世界</h1>
-      <p class="subtitle">
-        这是仓库里的第一个页面。改一行代码，回到浏览器刷新，看看会发生什么。
-      </p>
+      <!-- 1. 页面头部：左边是标题，右边是 Add Task 按钮 -->
+      <header class="page-header">
+        <div>
+          <h1>我的任务看板</h1>
+          <p class="subtitle">2026年10月3日 · 今天也要把事做完</p>
+        </div>
+        <button id="add-task-btn" type="button">Add Task</button>
+      </header>
+
+      <!-- 2. 三张统计卡片。结构是完全重复的：一个"容器"里放三个长得一样的小块 -->
+      <section class="stats">
+        <div class="stat-card">
+          <p class="stat-label">总任务</p>
+          <p class="stat-number">10</p>
+        </div>
+        <div class="stat-card-finish">
+          <p class="stat-label">已完成</p>
+          <p class="stat-number">6</p>
+        </div>
+         <div class="stat-card">
+          <p class="stat-label">进行中</p>
+          <p class="stat-number">1</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">待处理</p>
+          <p class="stat-number">3</p>
+        </div>
+      </section>
+
+      <!-- 3. 今日任务列表。ul = 无序列表，li = 列表里的每一项 -->
+      <section class="card">
+        <h2>今日任务</h2>
+        <ul class="task-list">
+          <li class="task-item">
+            <span class="task-check"></span>
+            <span class="task-title">写周报</span>
+            <span class="tag tag-pending">待处理</span>
+          </li>
+          <li class="task-item">
+            <span class="task-check"></span>
+            <span class="task-title">复习 CSS flexbox</span>
+            <span class="tag tag-pending">待处理</span>
+          </li>
+          <li class="task-item">
+            <span class="task-check done"></span>
+            <span class="task-title done">买牛奶</span>
+            <span class="tag tag-done">已完成</span>
+          </li>
+            <li class="task-item">
+            <span class="task-check done"></span>
+            <span class="task-title done">学前端</span>
+            <span class="tag tag-done">已完成</span>
+          </li>
+            <li class="task-item">
+            <span class="task-check processing"></span>
+            <span class="task-title done">出去玩</span>
+            <span class="tag tag-processing">待处理</span>
+          </li>
+        </ul>
+      </section>
 
       <section class="card">
-        <h2>计数器</h2>
+        <h2>计数器（上节课的小练习）</h2>
         <p>当前计数：<strong id="count">0</strong></p>
         <div class="actions">
           <button id="add-btn" type="button">点我 +1</button>
