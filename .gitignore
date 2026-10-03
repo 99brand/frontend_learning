@@ -8,3 +8,6 @@ node_modules/
 
 # 日志
 *.log
+
+# WorkBuddy 工具数据（非项目代码）
+.workbuddy/
